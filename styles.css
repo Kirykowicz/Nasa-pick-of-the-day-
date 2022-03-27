@@ -1,0 +1,23 @@
+:root {
+    /* CSS HEX */
+    --flickr-pink: #f72585ff;
+    --purple: #7209b7ff;
+    --trypan-blue: #3a0ca3ff;
+    --ultramarine-blue: #4361eeff;
+    --vivid-sky-blue: #4cc9f0ff;
+}
+body {
+    background-color: var(--vivid-sky-blue);
+}
+.title-decoration {
+    height: 40px;
+    width: 100%;
+    background-color: var(--flickr-pink);
+    margin-bottom: 200px;
+}
+.title {
+    margin: 160px auto 10px;
+    text-align: center;
+}
+/* get color pallete from https://coolors.co/ */
+
