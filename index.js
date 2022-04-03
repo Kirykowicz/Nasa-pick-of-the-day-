@@ -2,7 +2,7 @@ const getImage = async () => {
     console.log("before request");
     
     return await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&count=1`
+        `https://api.nasa.gov/planetary/apod?api_key=${secrets.API_KEY}&count=1`
     );
 };
 
