@@ -1,21 +1,34 @@
 const getImage = async () => {
   return await fetch(
-    "https://api.nasa.gov/planetary/apod?api_key=gRrY847JAv56hvmKlYBq0KNgS1nfkTOBY6aYVhZP&count=1"
+    `https://api.nasa.gov/planetary/apod?api_key=gRrY847JAv56hvmKlYBq0KNgS1nfkTOBY6aYVhZP&count=1`
   );
 };
 
 (async function () {
   const imageDiv = document.getElementById("imageContainer");
-  imageDiv.innerHTML = "hello world";
 
   const result = await getImage();
-  console.log("result: ", result);
+  console.log("after request", result);
+  const data = await result.json();
+  console.log("after result.json()", data);
+  console.log("result: ", data[0]);
 
-  var elem = document.createElement("img");
-  elem.setAttribute("src", result.url);
-  elem.setAttribute("height", "768");
-  elem.setAttribute("width", "1024");
-  imageDiv.appendChild(elem);
+  var imageElem = document.createElement("img");
+  imageElem.setAttribute("src", await data[0].url);
+  imageElem.setAttribute("height", "auto");
+  imageElem.setAttribute("width", "700");
+  imageElem.setAttribute("class", "nasaImage");
+
+  var title = document.createElement("h3");
+  title.innerHTML = await data[0].title;
+  title.setAttribute("class", "nasaTitle");
+  var desc = document.createElement("div");
+  desc.setAttribute("class", "nasaDescription");
+  desc.innerHTML = await data[0].explanation;
+
+  imageDiv.appendChild(title);
+  imageDiv.appendChild(imageElem);
+  imageDiv.appendChild(desc);
 })();
 
 // [

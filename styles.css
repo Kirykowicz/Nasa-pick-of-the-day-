@@ -19,5 +19,21 @@ body {
     margin: 160px auto 10px;
     text-align: center;
 }
+.nasaImage {
+    margin: 20px auto 0px;
+    border-radius: 16px;
+}
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.nasaDescription {
+    margin: 10px auto 300px;
+    text-align: center;
+}
+.nasaTitle {
+    text-align: center;
+}
 /* get color pallete from https://coolors.co/ */
 
