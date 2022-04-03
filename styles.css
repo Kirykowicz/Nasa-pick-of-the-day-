@@ -21,6 +21,7 @@ body {
 }
 .nasaImage {
     margin: 20px auto 0px;
+    border-radius: 16px;
 }
 .imageContainer {
     display: flex;

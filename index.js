@@ -1,6 +1,8 @@
 const getImage = async () => {
+    console.log("before request");
+    
     return await fetch(
-        "https://api.nasa.gov/planetary/apod?api_key=<apikey>x&count=1"
+        `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&count=1`
     );
 };
 
@@ -8,7 +10,9 @@ const getImage = async () => {
     const imageDiv = document.getElementById("imageContainer");
 
     const result = await getImage();
+    console.log("after request", result)
     const data = await result.json();
+    console.log("after result.json()", data)
     console.log("result: ", data[0]);
 
     var imageElem = document.createElement("img");
