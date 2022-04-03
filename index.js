@@ -1,22 +1,22 @@
 const getImage = async () => {
-    return await fetch(
-        "https://api.nasa.gov/planetary/apod?api_key=<api key here>&count=1"
-    );
+  return await fetch(
+    "https://api.nasa.gov/planetary/apod?api_key=gRrY847JAv56hvmKlYBq0KNgS1nfkTOBY6aYVhZP&count=1"
+  );
 };
 
 (async function () {
-    const imageDiv = document.getElementById("imageContainer");
-    imageDiv.innerHTML = "hello world";
+  const imageDiv = document.getElementById("imageContainer");
+  imageDiv.innerHTML = "hello world";
 
-    const result = await getImage();
-    console.log("result: ", result);
+  const result = await getImage();
+  console.log("result: ", result);
 
-    var elem = document.createElement("img");
-    elem.setAttribute("src", result.url);
-    elem.setAttribute("height", "768");
-    elem.setAttribute("width", "1024");
-    imageDiv.appendChild(elem);
-})()
+  var elem = document.createElement("img");
+  elem.setAttribute("src", result.url);
+  elem.setAttribute("height", "768");
+  elem.setAttribute("width", "1024");
+  imageDiv.appendChild(elem);
+})();
 
 // [
 //     {
