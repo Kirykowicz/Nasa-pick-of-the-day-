@@ -1,5 +1,5 @@
 const getImage = async () => {
-    console.log("before request");
+    console.log("before request. secrets: ", secrets);
     
     return await fetch(
         `https://api.nasa.gov/planetary/apod?api_key=${secrets.API_KEY}&count=1`
